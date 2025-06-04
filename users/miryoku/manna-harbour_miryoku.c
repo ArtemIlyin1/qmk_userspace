@@ -88,3 +88,61 @@ combo_t key_combos[] = {
   COMBO(thumbcombos_fun, KC_APP)
 };
 #endif
+
+// Notifies the host of the layer change
+// Layers reference: users/manna-harbour_miryoku/miryoku_babel/miryoku_layer_list.h
+// Layer change notification
+layer_state_t layer_state_set_user(layer_state_t state) {
+    uint8_t layer = get_highest_layer(state);
+    
+    // Debug output
+    uprintf("layer_state_set_user - Layer changed to: %d\n", layer);
+    
+    // skipping f14 and f15 as they conflict with mac OS display brightness controls
+    switch (layer) {
+        case 0:
+            uprintf("Layer 0: Base layer active, f13 fired\n");
+            SEND_STRING(SS_TAP(X_F13));
+            break;
+        case 1: 
+            uprintf("Layer 1: EXTRA layer active, f16 fired\n");
+            SEND_STRING(SS_TAP(X_F16));
+            break;
+        case 2:
+            uprintf("Layer 2: TAP layer active, f17 fired\n");
+            SEND_STRING(SS_TAP(X_F17));
+            break;
+        case 3:
+            uprintf("Layer 3: BUTTON layer active, f18 fired\n");
+            SEND_STRING(SS_TAP(X_F18));
+            break;
+        case 4:
+            uprintf("Layer 4: NAV layer active, f19 fired\n");
+            SEND_STRING(SS_TAP(X_F19));
+            break;
+        case 5: 
+            uprintf("Layer 5: MOUSE layer active, f20 fired\n");
+            SEND_STRING(SS_TAP(X_F20));
+            break;
+        case 6:
+            uprintf("Layer 6: MEDIA layer active, f21 fired\n");
+            SEND_STRING(SS_TAP(X_F21));
+            break;
+        case 7:
+            uprintf("Layer 7: NUM layer active, f22 fired\n");
+            SEND_STRING(SS_TAP(X_F22));
+            break;
+        case 8:
+            uprintf("Layer 8: SYM layer active, f23 fired\n");
+            SEND_STRING(SS_TAP(X_F23));
+            break;  
+        case 9:
+            uprintf("Layer 9: FUN layer active, f24 fired\n");
+            SEND_STRING(SS_TAP(X_F24));
+            break;
+        default:
+            uprintf("Layer not mapped: %d\n", layer);
+            break;
+    }
+    return state;
+}
