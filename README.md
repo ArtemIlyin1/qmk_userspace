@@ -19,6 +19,14 @@ This is a template repository which allows for an external set of QMK keymaps to
     * Listing the build targets can be done with `qmk userspace-list`
 1. Commit your changes
 
+## Howto build my own fraemware (ARTISIOM)
+1. download qmk and complete 1-3 steps [DOC](https://docs.qmk.fm/newbs_getting_started)
+1. download user space (you already reading it)
+1. register userspace by `qmk config user.overlay_dir="$(realpath qmk_userspace)"` from the folder where userspace exists
+1. build fraemware `qmk compile -kb crkbd/rev4_1/standard -km miryoku` where -kb is version of keyboard and -km is keymap
+1. to build with debug use `qmk compile -kb crkbd/rev4_1/standard -km miryoku -e CONSOLE_ENABLE=yes` and then `qmk console`
+
+
 ## Howto build with GitHub
 
 1. In the GitHub Actions tab, enable workflows
