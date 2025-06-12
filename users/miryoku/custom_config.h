@@ -5,3 +5,9 @@
 
 #pragma once
 
+#include "keymap_russian.h"
+
+#define MIRYOKU_EXTRA_RUSSIAN
+
+#define RGB_MATRIX_DEFAULT_HUE 72
+#define RGB_MATRIX_HUE_STEP 8

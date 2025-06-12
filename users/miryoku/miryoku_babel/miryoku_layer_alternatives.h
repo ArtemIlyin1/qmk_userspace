@@ -128,6 +128,11 @@ LGUI_T(KC_A),      LALT_T(KC_S),      LCTL_T(KC_D),      LSFT_T(KC_F),      KC_G
 LT(U_BUTTON,KC_Y), ALGR_T(KC_X),      KC_C,              KC_V,              KC_B,              KC_N,              KC_M,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),\
 U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
+#define MIRYOKU_ALTERNATIVES_BASE_DIKTOR_RU \
+RU_TSE,            RU_SOFT,           RU_YA,             KC_COMM,           KC_DOT,            RU_ZE,             RU_VE,             RU_KA,             RU_DE,             RU_CHE,            \
+LGUI_T(RU_U),      LALT_T(RU_I),      LCTL_T(RU_IE),     LSFT_T(RU_O),      RU_A,              RU_EL,             LSFT_T(RU_EN),     LCTL_T(RU_TE),     LALT_T(RU_ES),     LGUI_T(RU_ER),      \
+LT(U_BUTTON,RU_EF),ALGR_T(RU_E),      RU_HA,             RU_YERU,           RU_YU,             RU_BE,             RU_EM,             RU_PE,             ALGR_T(RU_GHE),    LT(U_BUTTON,RU_ZHE),\
+U_NP,              U_NP,              LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_TAP_AZERTY_FLIP \
 KC_A,              KC_Z,              KC_E,              KC_R,              KC_T,              KC_Y,              KC_U,              KC_I,              KC_O,              KC_P,              \

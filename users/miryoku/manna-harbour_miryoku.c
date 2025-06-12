@@ -146,3 +146,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
+
+void keyboard_post_init_user(void) {
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+}
