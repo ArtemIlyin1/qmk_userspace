@@ -20,13 +20,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 // U_EXTRA Layer: Dictor Russian
-[U_EXTRA] = LAYOUT_split_3x6_3_ex2(
+[U_EXTRA] = LAYOUT_split_3x6_3_ex2( //      
   //,--------------------------------------------------------------------------------------------------------.  ,--------------------------------------------------------------------------------------------------------.
-       KC_NO,           RU_TSE,        RU_SOFT,        RU_YA,        U_COMM,          U_DOT,      OS_SWAP,         KC_NO,            RU_ZE,         RU_VE,        RU_KA,         RU_DE,        RU_CHE,         KC_NO,
+       RU_ZHE,           RU_TSE,        RU_SOFT,        RU_YA,        RU_PE,          RU_GHE,      OS_SWAP,          KC_BSLS,         RU_ZE,         RU_VE,        RU_KA,         RU_DE,        RU_CHE,         RU_SHA,
   //|--------------+--------------+--------------+--------------+--------------+--------------+--------------|  |--------------+--------------+--------------+--------------+--------------+--------------+--------------|
-       KC_NO,        LGUI_T(RU_U),  LALT_T(RU_I),  LCTL_T(RU_IE), LSFT_T(RU_O),      RU_A,        LANG_SW,         KC_NO,            RU_EL,     LSFT_T(RU_EN), LCTL_T(RU_TE), LALT_T(RU_ES), LGUI_T(RU_ER),    KC_NO,
+       RU_SHTI,        LGUI_T(RU_U),  LALT_T(RU_I),  LCTL_T(RU_IE), LSFT_T(RU_O),      RU_A,        LANG_SW,         RU_HARD,          RU_EL,     LSFT_T(RU_EN), LCTL_T(RU_TE), LALT_T(RU_ES), LGUI_T(RU_ER),    RU_SHCH,
   //|--------------+--------------+--------------+--------------+--------------+--------------+--------------'  `--------------+--------------+--------------+--------------+--------------+--------------+--------------|
-       KC_NO,   LT(U_BUTTON,RU_EF),ALGR_T(RU_E),      RU_HA,         RU_YERU,        RU_YU,                                          RU_BE,         RU_EM,        RU_PE,     ALGR_T(RU_GHE),LT(U_BUTTON,RU_ZHE),KC_NO,
+       KC_NO,   LT(U_BUTTON,RU_EF),ALGR_T(RU_E),      RU_HA,         RU_YERU,        RU_YU,                                          RU_BE,         RU_EM,        U_COMM,    U_DOT,LT(U_BUTTON,KC_SLSH),KC_NO,
   //|--------------+--------------+--------------+--------------+--------------+--------------+--------------.  ,--------------+--------------+--------------+--------------+--------------+--------------+--------------|
                                                      LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),     LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL)
                                          //`-----------------------------------------------------------------'  `-----------------------------------------------------------------'
@@ -37,9 +37,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------------------------------------------------------------------.  ,--------------------------------------------------------------------------------------------------------.
        KC_NO,            KC_Q,          KC_W,          KC_F,           KC_P,         KC_B,          OS_SWAP,         KC_NO,            KC_J,           KC_L,         KC_U,         KC_Y,         KC_QUOT,        KC_NO,
   //|--------------+--------------+--------------+--------------+--------------+--------------+--------------|  |--------------+--------------+--------------+--------------+--------------+--------------+--------------|
-       KC_NO,        LGUI_T(KC_A),  LALT_T(KC_R),  LCTL_T(KC_S),  LSFT_T(KC_T),      KC_G,          KC_NO,         KC_NO,            KC_M,      LSFT_T(KC_N),  LCTL_T(KC_E),  LALT_T(KC_I),  LGUI_T(KC_O),     KC_NO,
+       KC_NO,        LGUI_T(KC_A),  LALT_T(KC_R),  LCTL_T(KC_S),  LSFT_T(KC_T),      KC_G,          KC_NO,           KC_NO,            KC_M,      LSFT_T(KC_N),  LCTL_T(KC_E),  LALT_T(KC_I),  LGUI_T(KC_O),     KC_NO,
   //|--------------+--------------+--------------+--------------+--------------+--------------+--------------'  `--------------+--------------+--------------+--------------+--------------+--------------+--------------|
-       KC_NO,    LT(U_BUTTON,KC_Z),   ALGR_T(KC_X),      KC_C,          KC_D,        KC_V,                                           KC_K,           KC_H,       KC_COMM,  ALGR_T(KC_DOT),  LT(U_BUTTON,KC_SLSH), KC_NO,
+       KC_NO,    LT(U_BUTTON,KC_Z),   ALGR_T(KC_X),      KC_C,          KC_D,        KC_V,                                             KC_K,        KC_H,       KC_COMM,  ALGR_T(KC_DOT),  LT(U_BUTTON,KC_SLSH), KC_NO,
   //|--------------+--------------+--------------+--------------+--------------+--------------+--------------.  ,--------------+--------------+--------------+--------------+--------------+--------------+--------------|
                                                      LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB),     LT(U_SYM,KC_ENT),  LT(U_NUM,KC_BSPC), LT(U_FUN,KC_DEL)
                                          //`-----------------------------------------------------------------'  `-----------------------------------------------------------------'

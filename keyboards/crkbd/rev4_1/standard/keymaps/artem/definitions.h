@@ -31,6 +31,7 @@ enum custom_keycodes {
     // language things
     U_DOT,
     U_COMM,
+    U_YO,
     LANG_SW,    
 
     // OS Toggle Key

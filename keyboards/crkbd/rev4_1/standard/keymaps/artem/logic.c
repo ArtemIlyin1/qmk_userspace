@@ -124,13 +124,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
                 return false; // We've handled this key, don't process it further
 
-            // case U_PST: // Our custom paste key
-            //     if (is_mac) {
-            //         register_code16(G(KC_V)); // Send Left GUI (Command) + V
-            //     } else {
-            //         register_code16(C(KC_V)); // Send Left Control + V
-            //     }
-            //     return false;
+            case U_PST: // Our custom paste key
+                if (is_mac) {
+                    register_code16(G(KC_V)); // Send Left GUI (Command) + V
+                } else {
+                    register_code16(C(KC_V)); // Send Left Control + V
+                }
+                return false;
 
             case U_CUT: // Our custom cut key
                 if (is_mac) {
@@ -163,17 +163,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
 
             case U_DOT:
-                if (is_russian) {
-                    // Russian Dot Logic
-                    if (is_mac) {
-                        register_code16(S(KC_7)); // <-- REPLACE with your Mac Russian Dot keycode
-                    } else {
-                        register_code16(KC_SLSH); // <-- REPLACE with your Windows Russian Dot keycode
-                    }
+                if (is_mac) {
+                    register_code16(S(KC_7)); // <-- REPLACE with your Mac Russian Dot keycode
                 } else {
-                    // English Dot (standard)
-                    register_code16(KC_DOT);
+                    register_code16(KC_SLSH); // <-- REPLACE with your Windows Russian Dot keycode
                 }
+                
                 return false;
 
             case U_COMM:
@@ -231,9 +226,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 break;
             case U_DOT:
                 // Unregister all possibilities to be safe
-                unregister_code16(S(KC_7));
-                unregister_code16(KC_SLSH);
-                unregister_code16(KC_DOT);
+                if (is_mac) {
+                    unregister_code16(S(KC_7));
+                } else {
+                    unregister_code16(KC_SLSH);
+                }
                 break;
             case U_COMM:
                 unregister_code16(S(KC_6));
@@ -265,7 +262,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     
     host_raw_hid_send(data_to_send, sizeof(data_to_send));
 
-    uprintf("Sent Raw HID data: Layer=%d\n", layer);
+    uprintf("Sent Raw HID data: Layer=%d\n", data_to_send[0]);
 
     return state;
 }
